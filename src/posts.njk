@@ -1,0 +1,23 @@
+---
+layout: layout.njk
+title: 記事一覧
+description: WACPAC のお知らせ・記事一覧。
+permalink: /posts/index.html
+---
+<div class="content post-list-page">
+  <h1>記事一覧</h1>
+  {% if collections.posts | length %}
+  <ul class="post-index__list">
+    {% for post in collections.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      {% if post.date %}
+      <span class="post-index__date">{{ post.date | isoDate }}</span>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="post-list-page__empty">まだ記事がありません。<code>src/posts/</code> に Markdown を追加してください。</p>
+  {% endif %}
+</div>

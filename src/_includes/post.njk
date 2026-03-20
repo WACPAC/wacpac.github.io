@@ -1,0 +1,16 @@
+---
+layout: layout.njk
+---
+<article class="content post">
+  <header class="post__header">
+    <h1 class="post__title">{{ title }}</h1>
+    {% if date %}
+    <p class="post__meta">
+      <time datetime="{{ date | isoDate }}">{{ date | isoDate }}</time>
+    </p>
+    {% endif %}
+  </header>
+  <div class="markdown-body">
+    {{ content | safe }}
+  </div>
+</article>

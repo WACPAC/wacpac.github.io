@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% if title %}{{ title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description | default(site.description) }}" />
+  <link rel="icon" href="{{ '/assets/brand/logo.png' | url }}" type="image/png" />
+  <link rel="apple-touch-icon" href="{{ '/assets/brand/logo.png' | url }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500;600&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ '/css/styles.css' | url }}" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="site-header__main">
+        <a class="site-logo" href="{{ '/' | url }}">
+          <img class="site-logo__mark" src="{{ '/assets/brand/logo.png' | url }}" width="48" height="48" alt="" decoding="async" />
+          <span class="site-logo__text">{{ site.title }}</span>
+        </a>
+        <p class="site-tagline">{{ site.tagline }}</p>
+        <nav class="site-nav" aria-label="サイト内">
+          <a href="{{ '/' | url }}">ホーム</a>
+          <a href="{{ '/posts/' | url }}">記事一覧</a>
+        </nav>
+      </div>
+      <div class="site-header__banner">
+        <img
+          class="site-header__banner-img"
+          src="{{ '/assets/brand/banner.png' | url }}"
+          width="320"
+          height="107"
+          alt="Waseda Competitive Programming Circle — WACPAC"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </header>
+  <div class="page-wrap">
+    {{ content | safe }}
+  </div>
+  <footer class="site-footer">
+    <p>お問い合わせは <a href="https://x.com/wacpac_wsd" rel="noopener noreferrer">公式 X</a> の DM まで。</p>
+  </footer>
+</body>
+</html>
