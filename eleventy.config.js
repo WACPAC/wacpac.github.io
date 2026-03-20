@@ -1,13 +1,18 @@
 /**
- * GitHub Pages: プロジェクトサイトは /repo-name/ 、ユーザー/組織の <user>.github.io はルート。
- * CI では GITHUB_REPOSITORY が自動で入るため、ローカルは常にルート前提でよい。
+ * GitHub Pages の URL 規則:
+ * - プロジェクトサイト owner/repo → https://owner.github.io/repo/ （pathPrefix は /repo/）
+ * - ユーザー/組織サイト owner/owner.github.io → https://owner.github.io/ （pathPrefix は /）
+ *
+ * CI の GITHUB_REPOSITORY が wacpac/wacpac.github.io なら自動でルート向けになる。
  */
 function pathPrefixFromEnv() {
   const full = process.env.GITHUB_REPOSITORY;
   if (!full) return "/";
   const [owner, repo] = full.split("/");
   if (!owner || !repo) return "/";
-  if (repo === `${owner}.github.io`) return "/";
+  const o = owner.toLowerCase();
+  const r = repo.toLowerCase();
+  if (r === `${o}.github.io`) return "/";
   return `/${repo}/`;
 }
 

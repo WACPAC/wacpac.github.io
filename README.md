@@ -10,12 +10,6 @@ npm run build    # → dist/
 npm run preview  # http://localhost:3456
 ```
 
-サブパス公開と同じリンクをローカルで確認したい場合:
-
-```bash
-GITHUB_REPOSITORY=あなたのユーザー名/wacpac-website npm run build
-```
-
 ## 編集する場所
 
 | パス | 内容 |
@@ -51,15 +45,3 @@ description: "一覧や meta 用の短い説明（任意）"
 例は `welcome-sample`（書き方ガイド）と `activity-log-sample`（活動メモ風）の 2 本を参照。
 
 トップページだけの画像は `src/assets/home/PICS/` に置き、本文では `assets/home/PICS/...` で参照します。
-
-### ブランド画像
-
-- `src/assets/brand/logo.png` … ファビコン・ヘッダーのマーク
-- `src/assets/brand/banner.png` … ヘッダー右側のバナー（`layout.njk`）
-
-## GitHub の初回設定
-
-1. **Settings → Pages → Source: GitHub Actions**
-2. `main` を push し、Actions の「Deploy to GitHub Pages」が成功することを確認
-
-詳細は [Eleventy: Deploy to GitHub Pages](https://www.11ty.dev/docs/deployment/#deploy-to-github-pages) も参照してください。
