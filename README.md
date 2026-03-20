@@ -2,21 +2,6 @@
 
 [Eleventy](https://www.11ty.dev/) で Markdown を HTML にし、[GitHub Actions](https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) から [GitHub Pages](https://docs.github.com/ja/pages) に公開します。
 
-### リポジトリと push
-
-| 役割 | リモート名 | URL |
-|------|------------|-----|
-| **本番（`https://wacpac.github.io/`）** | `wacpac-github-io` | `git@github.com:WACPAC/wacpac.github.io.git` |
-| 旧プロジェクトサイト用（任意） | `origin` | `git@github.com:WACPAC/wacpac-website.git` |
-
-両方に同じ `main` を載せる例:
-
-```bash
-git push origin main && git push wacpac-github-io main
-```
-
-**`wacpac.github.io` リポジトリ**で **Settings → Pages → Source: GitHub Actions** が有効か確認してください（こちらがルートの公開元です）。
-
 ## ローカル
 
 ```bash
