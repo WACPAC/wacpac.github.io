@@ -6,9 +6,11 @@
 
 ```bash
 npm ci
-npm run build    # → dist/
-npm run preview  # http://localhost:3456
+npm run build    # → dist/（本番用の一度きりのビルド）
+npm run preview  # http://localhost:3456 — 監視＋自動再ビルド＋ブラウザの自動更新
 ```
+
+`preview` は [Eleventy の `--serve`](https://www.11ty.dev/docs/usage/#serve-for-live-reload) を使います。`src/` 内の `.md` やテンプレートを保存すると `dist/` が書き換わり、開いているページが更新されます。ビルド済みの `dist/` だけを静的に確認したいときは `npx --yes serve dist -p 3456` を使ってください。
 
 ## 編集する場所
 

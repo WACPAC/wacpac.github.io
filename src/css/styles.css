@@ -220,6 +220,37 @@ a:hover {
   border: 1px solid var(--border);
 }
 
+.activity-photos {
+  margin: 1.25rem 0 0;
+}
+
+.activity-photos__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.activity-photos__cell img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.activity-photos__caption {
+  margin: 0.85rem 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .activity-photos__row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .post-index {
   margin-bottom: 3rem;
 }
