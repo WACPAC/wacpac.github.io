@@ -220,6 +220,21 @@ a:hover {
   border: 1px solid var(--border);
 }
 
+.markdown-body .embed-pdf {
+  display: block;
+  max-width: 100%;
+  min-height: min(70vh, 900px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.markdown-body .embed-pdf__fallback {
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
 .activity-photos {
   margin: 1.25rem 0 0;
 }

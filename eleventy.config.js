@@ -20,6 +20,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/posts/**/PICS/**");
+  eleventyConfig.addPassthroughCopy("src/posts/**/*.pdf");
 
   eleventyConfig.addFilter("isoDate", (value) => {
     if (!value) return "";
